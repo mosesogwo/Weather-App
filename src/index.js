@@ -8,16 +8,10 @@ const cityDesc = responseArea.querySelector('.desc-content')
 const cityTemp = responseArea.querySelector('.temp-content')
 const cityWind = responseArea.querySelector('.wind-content')
 const cityCloud = responseArea.querySelector('.cloud-content')
+const farenBtn = document.querySelector('.faren-btn')
+const celciusBtn = document.querySelector('.celcius-btn')
+const tempBtns = document.querySelector('.temp-btns')
 
-submitBtn.addEventListener('click', (event) => {
-  event.preventDefault();
-  const cityValue = document.querySelector('#city').value;
-  if (cityValue != '') {
-    getWeatherC(cityValue);
-    responseArea.classList.remove("hidden");
-    document.querySelector('#city').value = "";
-  }
-})
 
 const getWeatherC = (city) => {
   fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${appID}&units=metric`)
@@ -25,12 +19,14 @@ const getWeatherC = (city) => {
     return response.json()
   })
   .then((response) => {
-    console.log(response)
     cityName.innerHTML = `${response.name}, ${response.sys.country} <img src="http://openweathermap.org/img/wn/${response.weather[0].icon}.png" alt="weather-icon">`;
     cityDesc.textContent = `${response.weather[0].description}`;
     cityTemp.textContent = `${response.main.temp} C`;
-    cityWind.textContent = `${response.wind.speed}`;
+    cityWind.textContent = `${response.wind.speed} meter/sec`;
     cityCloud.textContent = `${response.clouds.all}`;
+  })
+  .catch((error) => {
+    alert("Please check the city and try again");
   })
 }
 
@@ -40,11 +36,39 @@ const getWeatherF = (city) => {
     return response.json()
   })
   .then((response) => {
-    console.log(response)
     cityName.innerHTML = `${response.name}, ${response.sys.country} <img src="http://openweathermap.org/img/wn/${response.weather[0].icon}.png" alt="weather-icon">`;
     cityDesc.textContent = `${response.weather[0].description}`;
     cityTemp.textContent = `${response.main.temp} F`;
-    cityWind.textContent = `${response.wind.speed}`;
+    cityWind.textContent = `${response.wind.speed} miles/hr`;
     cityCloud.textContent = `${response.clouds.all}`;
   })
+  .catch ((error) => {
+    alert("Please check the city and try again");
+  }) 
 }
+  
+submitBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  const cityValue = document.querySelector('#city').value;
+  if (cityValue != '') {
+    getWeatherC(cityValue);
+    tempBtns.classList.remove("hidden");
+    responseArea.classList.remove("hidden");
+  }
+})
+
+farenBtn.addEventListener('click', () => {
+  const cityValue = document.querySelector('#city').value;
+  if (cityValue != '') {
+    getWeatherF(cityValue);
+    responseArea.classList.remove("hidden");
+  }
+})
+
+celciusBtn.addEventListener('click', () => {
+  const cityValue = document.querySelector('#city').value;
+  if (cityValue != '') {
+    getWeatherC(cityValue);
+    responseArea.classList.remove("hidden");
+  }
+})
