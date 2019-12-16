@@ -8,20 +8,49 @@
 </head>
 <body class="bg-light">
   <main>
-    <h3 class="text-center mt-5"><span class="text-success">Weather</span>App</h3>
+    <h3 class="text-center mt-5">Weather<span class="text-success">App</span></h3>
     <div class="row container text-center mt-5">
       <div class="col-6">
         <form class="ml-5 mr-5">
           <div class="form-group">
-            <label for="city">Enter the name of the city:</label>
+            <label for="city">Enter name of the city:</label>
             <input type="text" class="form-control" id="city">
           </div>
-          <button type="submit" class="btn btn-primary">Get Weather</button>
+          <button type="submit" class="btn btn-primary submit-btn">Get Weather</button>
         </form>
       </div>
       <div class="col-6 response">
-       
+        <h5 class="hidden"><button class="celcius btn btn-primary mr-3">Celcius</button>|<button class="farenheit btn btn-primary ml-3">Farenheit</button></h5>
+        <div class="response-container hidden">
+          <table class="table table-hover bg-light">
+            <tbody>
+              <tr class="table-active">
+                <th scope="row">City</th>
+                <td class="text-success city-content">Column content</td>
+              </tr>
 
+              <tr class="table-active">
+                <th scope="row">Description</th>
+                <td class="text-success desc-content">Column content</td>
+              </tr>
+
+              <tr class="table-active">
+                <th scope="row">Temperature</th>
+                <td class="text-success temp-content">Column content</td>
+              </tr>
+
+              <tr class="table-active">
+                <th scope="row">Wind Speed(m/s)</th>
+                <td class="text-success wind-content">Column content</td>
+              </tr>
+
+              <tr class="table-active">
+                <th scope="row">Cloudiness(%)</th>
+                <td class="text-success cloud-content">Column content</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </main>
