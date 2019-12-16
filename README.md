@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://raw.githack.com/mosesogwo/Weather-App/all-features/dist/index.html)
+[Live Demo Link](#)
 
 
 ## Getting Started
