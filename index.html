@@ -6,8 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Weather App</title>
 </head>
-<body>
-  <h3>Weather App</h3>
+<body class="bg-light">
+  <main>
+    <h3 class="text-center mt-5"><span class="text-success">Weather</span>App</h3>
+    <div class="row container text-center mt-5">
+      <div class="col-6">
+        <form class="ml-5 mr-5">
+          <div class="form-group">
+            <label for="city">Enter the name of the city:</label>
+            <input type="text" class="form-control" id="city">
+          </div>
+          <button type="submit" class="btn btn-primary">Get Weather</button>
+        </form>
+      </div>
+      <div class="col-6 response">
+       
+
+      </div>
+    </div>
+  </main>
+
   <script src="main.js"></script>
 </body>
 </html>
