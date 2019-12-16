@@ -13,3 +13,6 @@
 
 
 /* Custom CSS */
+.hidden {
+  display: none;
+}
