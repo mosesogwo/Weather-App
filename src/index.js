@@ -1,3 +1,5 @@
+/* eslint-env browser */
+
 import './style.css';
 
 const appID = '1224c6d99243f71ed4cd542b792bd3fd';
@@ -15,7 +17,7 @@ const tempBtns = document.querySelector('.temp-btns');
 
 const getWeatherC = (city) => {
   fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${appID}&units=metric`)
-    .then((response) => response.json())
+    .then(response => response.json())
     .then((response) => {
       cityName.innerHTML = `${response.name}, ${response.sys.country} <img src="http://openweathermap.org/img/wn/${response.weather[0].icon}.png" alt="weather-icon">`;
       cityDesc.textContent = `${response.weather[0].description}`;
@@ -30,7 +32,7 @@ const getWeatherC = (city) => {
 
 const getWeatherF = (city) => {
   fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${appID}&units=imperial`)
-    .then((response) => response.json())
+    .then(response => response.json())
     .then((response) => {
       cityName.innerHTML = `${response.name}, ${response.sys.country} <img src="http://openweathermap.org/img/wn/${response.weather[0].icon}.png" alt="weather-icon">`;
       cityDesc.textContent = `${response.weather[0].description}`;
