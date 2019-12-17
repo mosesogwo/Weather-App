@@ -22,7 +22,7 @@ const alertMessage = (msg, className) => {
   const mainRow = document.querySelector('.main-row');
   main.insertBefore(alertDiv, mainRow);
   setTimeout(() => document.querySelector('.alert').remove(), 3000);
-}
+};
 
 const getWeatherC = (city) => {
   fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${appID}&units=metric`)
