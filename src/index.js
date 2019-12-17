@@ -14,6 +14,15 @@ const farenBtn = document.querySelector('.faren-btn');
 const celciusBtn = document.querySelector('.celcius-btn');
 const tempBtns = document.querySelector('.temp-btns');
 
+const alertMessage = (msg, className) => {
+  const alertDiv = document.createElement('div');
+  alertDiv.className = `alert alert-${className}`;
+  alertDiv.appendChild(document.createTextNode(msg));
+  const main = document.querySelector('main');
+  const mainRow = document.querySelector('.main-row');
+  main.insertBefore(alertDiv, mainRow);
+  setTimeout(() => document.querySelector('.alert').remove(), 3000);
+}
 
 const getWeatherC = (city) => {
   fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${appID}&units=metric`)
@@ -26,7 +35,7 @@ const getWeatherC = (city) => {
       cityCloud.textContent = `${response.clouds.all}`;
     })
     .catch(() => {
-      alert('Please check the city and try again');
+      alertMessage('Please check the city and try again', 'danger');
     });
 };
 
@@ -41,7 +50,7 @@ const getWeatherF = (city) => {
       cityCloud.textContent = `${response.clouds.all}`;
     })
     .catch(() => {
-      alert('Please check the city and try again');
+      alertMessage('Please check the city and try again', 'danger');
     });
 };
 
