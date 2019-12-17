@@ -36,7 +36,7 @@ const getWeatherC = (city) => {
     })
     .catch(() => {
       alertMessage('Please check the city and try again', 'danger');
-      document.querySelector('#city').value = "";
+      document.querySelector('#city').value = '';
     });
 };
 
@@ -52,7 +52,7 @@ const getWeatherF = (city) => {
     })
     .catch(() => {
       alertMessage('Please check the city and try again', 'danger');
-      document.querySelector('#city').value = "";
+      document.querySelector('#city').value = '';
     });
 };
 
