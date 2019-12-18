@@ -10,9 +10,9 @@
 - Javascript
 - Webpack
 
-<!-- ## Live Demo
+## Live Demo
 
-[Live Demo Link](#) -->
+[Live Demo Link](https://mosesogwo.github.io/Weather-App/)
 
 
 ## Getting Started
