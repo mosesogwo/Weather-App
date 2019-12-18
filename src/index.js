@@ -5,6 +5,7 @@ import './style.css';
 const appID = '1224c6d99243f71ed4cd542b792bd3fd';
 const submitBtn = document.querySelector('.submit-btn');
 const responseArea = document.querySelector('.response-container');
+const cityImage = responseArea.querySelector('.city-image');
 const cityName = responseArea.querySelector('.city-content');
 const cityDesc = responseArea.querySelector('.desc-content');
 const cityTemp = responseArea.querySelector('.temp-content');
@@ -25,10 +26,11 @@ const alertMessage = (msg, className) => {
 };
 
 const getWeatherC = (city) => {
-  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${appID}&units=metric`)
+  fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${appID}&units=metric`, { mode: 'cors' })
     .then(response => response.json())
     .then((response) => {
-      cityName.innerHTML = `${response.name}, ${response.sys.country} <img src="http://openweathermap.org/img/wn/${response.weather[0].icon}.png" alt="weather-icon">`;
+      cityImage.innerHTML = `<img src="http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png" alt="weather-icon">`;
+      cityName.textContent = `${response.name}, ${response.sys.country},`;
       cityDesc.textContent = `${response.weather[0].description}`;
       cityTemp.textContent = `${response.main.temp} C`;
       cityWind.textContent = `${response.wind.speed} meter/sec`;
@@ -41,10 +43,11 @@ const getWeatherC = (city) => {
 };
 
 const getWeatherF = (city) => {
-  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${appID}&units=imperial`)
+  fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${appID}&units=imperial`, { mode: 'cors' })
     .then(response => response.json())
     .then((response) => {
-      cityName.innerHTML = `${response.name}, ${response.sys.country} <img src="http://openweathermap.org/img/wn/${response.weather[0].icon}.png" alt="weather-icon">`;
+      cityImage.innerHTML = `<img src="http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png" alt="weather-icon">`;
+      cityName.textContent = `${response.name}, ${response.sys.country}`;
       cityDesc.textContent = `${response.weather[0].description}`;
       cityTemp.textContent = `${response.main.temp} F`;
       cityWind.textContent = `${response.wind.speed} miles/hr`;
