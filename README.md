@@ -10,9 +10,9 @@
 - Javascript
 - Webpack
 
-<!-- ## Live Demo
+## Live Demo
 
-[Live Demo Link](#) -->
+[Live Demo Link](https://mosesogwo.github.io/Weather-App/)
 
 
 ## Getting Started
@@ -24,8 +24,6 @@ To get a local copy up and running follow these simple example steps.
  - Run ```cd Weather-App``` to move into the app directory.
 
  - Open the ```dist/index.html``` file in your browser.
-
-
 
 
 ## Author
