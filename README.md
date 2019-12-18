@@ -26,8 +26,6 @@ To get a local copy up and running follow these simple example steps.
  - Open the ```dist/index.html``` file in your browser.
 
 
-
-
 ## Author
 
 👤 **Moses Ogwo**
