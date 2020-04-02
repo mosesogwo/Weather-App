@@ -2,6 +2,7 @@
 
 > Weather App is a basic javascript app that returns weather information of requested cities from the openweather API.
 
+![](2020-04-02-13-54-42.png)
 
 ## Built With
 
@@ -25,13 +26,19 @@ To get a local copy up and running follow these simple example steps.
 
  - Open the ```dist/index.html``` file in your browser.
 
+To start making changes,
+- Run `npm install` to install all dependencies.
+
+- Run `npm run build` for webpack to start watching for changes
+
+- You can now make changes to the project.
 
 ## Author
 
 👤 **Moses Ogwo**
 
 - Github: [@mosesogwo](https://github.com/mosesogwo)
-
+- Linkedin: [mosesogwo](https://www.linkedin.com/in/mosesogwo/)
 
 
 ## 📝 License
